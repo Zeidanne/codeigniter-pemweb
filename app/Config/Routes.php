@@ -31,7 +31,11 @@ $routes->group('belajarlibrary', static function (RouteCollection $routes) {
 $routes->group('mahasiswa', static function ($routes) {
     $routes->get('/', "Mahasiswa::index");
     $routes->get('add', "Mahasiswa::add");
-    $routes->post('save', "Mahasiswa::save");
+    $routes->get('show', "Mahasiswa::show");
+    $routes->get('edit/(:segment)', "Mahasiswa::edit/$1");
+    $routes->get('delete/(:segment)', "Mahasiswa::delete/$1");
+    $routes->post('submit', "Mahasiswa::submit");
+    $routes->post('update/(:segment)', 'Mahasiswa::update/$1');
 });
 
 $routes->group('dashboard', static function ($routes) {

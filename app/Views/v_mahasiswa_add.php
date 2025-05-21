@@ -1,56 +1,58 @@
-<?php
-
-echo form_open('mahasiswa/save', ['class' => 'form-horizontal']);
-?>
-
-<?php if (isset($error_message)) : ?>
-    <div class="alert alert-danger" role="alert">
-        <?= $error_message; ?>
+<?php echo form_open('mahasiswa/submit', 'id="form-mahasiswa"'); ?>
+<div class="mt-3">
+    <div class="card border-0">
+        <div class="card-header">
+            <h5>Form Mahasiswa</h5>
+        </div>
+        <div class="card-body p-4">
+            <div class="row">
+                <div class="col-lg-12 mb-3">
+                    <label for="nim" class="form-label">NIM</label>
+                    <input type="text" class="form-control" name="nim">
+                </div>
+                <div class="col-lg-12 mb-3">
+                    <label for="nama" class="form-label">Nama</label>
+                    <input type="text" class="form-control" name="nama">
+                </div>
+                <div class="col-lg-12 mb-3">
+                    <label for="gender" class="form-label">Jenis Kelamin</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="gender" value="Laki-laki" id="gender1">
+                        <label for="gender1" class="form-check-label">Laki-laki</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="gender" value="Perempuan" id="gender2">
+                        <label for="gender2" class="form-check-label">Perempuan</label>
+                    </div>
+                </div>
+                <div class="col-lg-12 mb-3">
+                    <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
+                    <input type="date" class="form-control" name="tanggalLahir">
+                </div>
+                <div class="col-lg-12 mb-3">
+                    <label for="umur" class="form-label">Umur</label>
+                    <input type="number" class="form-control" name="umur">
+                </div>
+                <div class="col-lg-12 mb-3">
+                    <label for="jurusan" class="form-label">Jurusan</label>
+                    <select name="jurusan" class="form-control" required>
+                        <option value="Matematika">Matematika</option>
+                        <option value="Kimia">Kimia</option>
+                        <option value="Fisika">Fisika</option>
+                        <option value="Biologi">Biologi</option>
+                        <option value="Statistika">Statistika</option>
+                        <option value="Farmasi">Farmasi</option>
+                        <option value="Ilmu Komputer">Ilmu Komputer</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer p-3">
+            <div class="d-flex flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
     </div>
-<?php endif; ?>
-
-<div style="margin-bottom: 15px;">
-    <?= form_label('NIM', 'nim', ['class' => 'form-label']); ?>
-    <?= form_input('nim', old('nim') ?? '', ['class' => 'form-control', 'placeholder' => 'Masukkan NIM', 'required' => 'required']); ?>
-    <?php if (isset($validation) && $validation->hasError('nim')) : ?>
-        <small class="text-danger"><?= $validation->getError('nim'); ?></small>
-    <?php endif; ?>
 </div>
 
-<div style="margin-bottom: 15px;">
-    <?= form_label('Nama', 'nama', ['class' => 'form-label']); ?>
-    <?= form_input('nama', old('nama') ?? '', ['class' => 'form-control', 'placeholder' => 'Masukkan Nama', 'required' => 'required']); ?>
-    <?php if (isset($validation) && $validation->hasError('nama')) : ?>
-        <small class="text-danger"><?= $validation->getError('nama'); ?></small>
-    <?php endif; ?>
-</div>
-
-<div style="margin-bottom: 15px;">
-    <?= form_label('Jenis Kelamin', 'jenis_kelamin', ['class' => 'form-label']); ?>
-    <?php
-    $options = [
-        'Laki-laki' => 'Laki-laki',
-        'Perempuan' => 'Perempuan'
-    ];
-    ?>
-    <?= form_dropdown('jenis_kelamin', $options, old('jenis_kelamin') ?? '', ['class' => 'form-control', 'required' => 'required']); ?>
-    <?php if (isset($validation) && $validation->hasError('jenis_kelamin')) : ?>
-        <small class="text-danger"><?= $validation->getError('jenis_kelamin'); ?></small>
-    <?php endif; ?>
-</div>
-
-<div style="margin-bottom: 15px;">
-    <?= form_label('Tanggal Lahir', 'tanggal_lahir', ['class' => 'form-label']); ?>
-    <?= form_input('tanggal_lahir', old('tanggal_lahir') ?? '', ['class' => 'form-control', 'type' => 'date', 'required' => 'required']); ?>
-    <?php if (isset($validation) && $validation->hasError('tanggal_lahir')) : ?>
-        <small class="text-danger"><?= $validation->getError('tanggal_lahir'); ?></small>
-    <?php endif; ?>
-</div>
-
-<div>
-    <?= form_submit('submit', 'Simpan', ['class' => 'btn btn-primary']); ?>
-</div>
-
-<?php
-echo form_close();
-?>
+<?php echo form_close(); ?>

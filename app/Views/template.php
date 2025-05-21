@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title>Frame CodeIgniter</title>
 
     <!-- Custom fonts for this template-->
     <link href="/frame-igni/public/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -51,9 +50,27 @@
 
             <!-- Nav Item - Mahasiswa -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('mahasiswa') ?>">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Mahasiswa</span></a>
+                <div class="nav-link text-white">
+                    <i class="nav-icon bi bi-mortarboard"></i>
+                    <p>Mahasiswa</p>
+                </div>
+                <ul class="nav-item">
+                    <li>
+                        <a href="<?php echo site_url('mahasiswa') ?>" class="nav-link">
+                            <p>Lihat Mahasiswa</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('mahasiswa/show') ?>" class="nav-link">
+                            <p>Tampilkan Mahasiswa</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('mahasiswa/add') ?>" class="nav-link">
+                            <p>Tambah Mahasiswa</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
 
 
@@ -238,7 +255,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Hal:9900</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
