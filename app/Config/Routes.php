@@ -38,6 +38,15 @@ $routes->group('mahasiswa', static function ($routes) {
     $routes->post('update/(:segment)', 'Mahasiswa::update/$1');
 });
 
+$routes->group('dosen', static function($routes) {
+    $routes->get('/', 'Dosen::index', ['namespace' => 'App\Modules\Dosen\Controllers']);
+    $routes->get('add', 'Dosen::add', ['namespace' => 'App\Modules\Dosen\Controllers']);
+    $routes->get('edit/(:segment)', 'Dosen::edit/$1', ['namespace' => 'App\Modules\Dosen\Controllers']);
+    $routes->get('delete/(:segment)', 'Dosen::delete/$1', ['namespace' => 'App\Modules\Dosen\Controllers']);
+    $routes->post('submit', 'Dosen::submit', ['namespace' => 'App\Modules\Dosen\Controllers']);
+    $routes->post('update/(:segment)', 'Dosen::update/$1', ['namespace' => 'App\Modules\Dosen\Controllers']);
+});
+
 $routes->group('dashboard', static function ($routes) {
     $routes->get('/', "dashboard::index");
     $routes->get('(:any)', "dashboard::$1");

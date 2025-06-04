@@ -47,8 +47,26 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
+            <!-- Nav Item - Dosen -->
+            <li class="nav-item">
+                <div class="nav-link text-white">
+                    <i class="nav-icon bi bi-mortarboard"></i>
+                    <p>Dosen</p>
+                </div>
+                <ul class="nav-item">
+                    <li>
+                        <a href="<?php echo site_url('dosen') ?>" class="nav-link">
+                            <p>Dosen</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo site_url('dosen/add') ?>" class="nav-link">
+                            <p>Tambah Dosen</p>
+                        </a>
+                    </li>
+                </ul>
 
-            <!-- Nav Item - Mahasiswa -->
+                <!-- Nav Item - Mahasiswa -->
             <li class="nav-item">
                 <div class="nav-link text-white">
                     <i class="nav-icon bi bi-mortarboard"></i>
