@@ -1,0 +1,13 @@
+CRITICAL - 2025-06-11 02:24:16 --> ArgumentCountError: Too few arguments to function CodeIgniter\Router\RouteCollection::get(), 1 passed in E:\Development\Laragon\laragon\www\frame-igni\app\Config\Routes.php on line 53 and at least 2 expected
+[Method: GET, Route: produk]
+in SYSTEMPATH\Router\RouteCollection.php on line 1050.
+ 1 APPPATH\Config\Routes.php(53): CodeIgniter\Router\RouteCollection->get('produk')
+ 2 SYSTEMPATH\Router\RouteCollection.php(799): CodeIgniter\Router\RouteCollection->Config\{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 3 APPPATH\Config\Routes.php(54): CodeIgniter\Router\RouteCollection->group('api', [...], Object(Closure))
+ 4 SYSTEMPATH\Router\RouteCollection.php(339): require('E:\\Development\\Laragon\\laragon\\www\\frame-igni\\app\\Config\\Routes.php')
+ 5 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 6 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

@@ -47,6 +47,11 @@ $routes->group('dosen', static function($routes) {
     $routes->post('update/(:segment)', 'Dosen::update/$1', ['namespace' => 'App\Modules\Dosen\Controllers']);
 });
 
+$routes->group('api', ['namespace' => 'App\Modules\Produk\Controllers'],
+    function($routes) {
+        $routes->resource('produk');
+});
+
 $routes->group('dashboard', static function ($routes) {
     $routes->get('/', "dashboard::index");
     $routes->get('(:any)', "dashboard::$1");
